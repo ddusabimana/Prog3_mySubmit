@@ -1,0 +1,133 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <string.h>
+#include <errno.h>
+#include <pwd.h>
+#include <dirent.h>
+#include <fcntl.h>
+#include <time.h>
+#include <termios.h>
+//.
+#define size_B 2048
+#define mode_copy 0644
+//.
+//.Globals
+void display_File(char* , struct stat *);
+struct stat fileInfo;
+struct dirent **fileList;
+char * fileExit;
+char readin[size_B];
+int isDirectory(const char *);
+void oops(char *,  char *);
+char course[size_B];
+char myProg[size_B];
+char filesList[size_B];
+char currentDirectory[size_B];
+//.char directPath[size_B];
+char DPA[size_B];// Direct Path Associate
+char dirPath[size_B];
+char listFile[size_B];
+void files_To_Submit();
+static char *buf;
+static char FilesReadyTogo[size_B];
+//.static char rKey = '\r\n';
+void printFiles();
+struct dirent ** fileList;
+//.
+int hiddenFiles(const struct dirent *);
+int dirExists(char * path);
+const char * getUserName();
+void displayFiles();
+void Files_To_Submit();
+char *formatString(char *string, int len);
+void copyFiles(char *, char *, char *);
+//.
+//.
+//.
+int main()
+{
+  //---------------Number 1: read in 256 characters max----------------------
+  //course name exists?
+  printf("\nEnter Course Name : ");
+  scanf("%s", readin);
+  if(dirExists(readin) < 0) {
+    printf("\nmySubmit - directory error : %s", readin);
+    printf("\nErrNum : %d : [ %s ]\n", errno, strerror(errno));
+    //.exit(1);
+  }
+  //---------------Number 2: submit exists? --------------------------------------------------------
+  strcat(readin, "/submit");
+  if(dirExists(readin) < 0) {
+    printf("\nmySubmit - directory error : %s", readin);
+    printf("\nErrNum : %d : [ %s ]\n", errno, strerror(errno));
+    //.exit(2);
+  }
+  //.
+  strcat(readin, "/");
+  strcat(readin, getUserName());
+  if(dirExists(readin) < 0) {
+    printf("\nmySubmit - user submit directory not present : %s", readin);
+    printf("\nErrNum : %d : [ %s ]\n", errno, strerror(errno));
+    printf("\nmySubmit - creating user submit directory : %s", readin);
+    mkdir(readin, 0777);
+  }
+  //.
+  char readinassign[256];
+  //----------------Number 5: Get the name of the myProg and add a subdirectory-----------------
+  printf("\nEnter the Assignment Name : ");
+  scanf("%s", readinassign);
+  strcpy(myProg, readinassign);
+  strcat(readin, "/");
+  strcat(readin, readinassign);
+  if(dirExists(readin) < 0) {
+    printf("\nmySubmit - assignment directory not present : %s", readin);
+    printf("\nErrNum : %d : [ %s ]\n", errno, strerror(errno));
+    printf("\nmySubmit - creating assignment directory : %s", readin);
+    mkdir(readin, 0777);
+  }
+  strcpy(DPA, readin);
+  strcpy(dirPath, readin);
+  buf = (char *)malloc(size_B * sizeof(char));
+  //.
+  displayFiles();
+  files_To_Submit();
+  printFiles();
+  //.
+  free(buf);
+  return(0);
+}
+
+
+//does the directory exist?
+int dirExists(char * path)
+{
+  struct stat fileStat;
+  char workingdir[size_B];
+  strcpy(workingdir, "./");
+  strcat(workingdir, path);
+  return stat(workingdir, &fileStat);
+}
+
+//get the username
+const char * getUserName()
+{
+  uid_t uid = geteuid();
+  struct passwd * pw = getpwuid(uid);
+  if(pw) {
+    return pw->pw_name;
+  }
+  return "";
+}
+
+
+void displayFiles()
+{
+  //--------------Number 6: Display our list of files-----------------------------------
+  //name, size, modification date and time
+  int filesLength = scandir(".", &fileList, hiddenFiles, alphasort);
+  printf("\n%9s %s %s %3s\n", "SIZE", "DATE", "MODIFIED", "NAME");
+  int i;
+  for(i = 0; i < fi

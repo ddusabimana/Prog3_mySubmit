@@ -1,0 +1,148 @@
+Project done by: Samuel Copotosto
+	     	 Daniel Dusabimana
+
+dusabimana@honeybee:~/cos350_Proj3$ mkdir cos101
+dusabimana@honeybee:~/cos350_Proj3$ mkdir cos101/submit
+dusabimana@honeybee:~/cos350_Proj3$ mysubmit
+
+Enter Course Name : project1
+
+mySubmit - directory error : project1
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - directory error : project1/submit
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - user submit directory not present : project1/submit/dusabimana
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - creating user submit directory : project1/submit/dusabimana
+Enter the Assignment Name : ^C
+dusabimana@honeybee:~/cos350_Proj3$ ls
+cos101  Makefile  mysubmit  #mysubmit.c#  mysubmit.c
+dusabimana@honeybee:~/cos350_Proj3$ rm -rf cos101
+dusabimana@honeybee:~/cos350_Proj3$ mkdir cos101
+dusabimana@honeybee:~/cos350_Proj3$ mkdir cos101/submit
+dusabimana@honeybee:~/cos350_Proj3$ mysubmit
+
+Enter Course Name : cos101
+
+mySubmit - user submit directory not present : cos101/submit/dusabimana
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - creating user submit directory : cos101/submit/dusabimana
+Enter the Assignment Name : project1
+
+mySubmit - assignment directory not present : cos101/submit/dusabimana/project1
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - creating assignment directory : cos101/submit/dusabimana/project1
+     SIZE DATE MODIFIED NAME
+     3512 Mar 16 10:16:5 #mysubmit.c#
+
+mySubmit - file list error : cos101/submit/dusabimana/project1
+ErrNum : 2 : [ No such file or directory ]
+       57 Mar 16 10:37:1 Makefile
+    19027 Mar 16 11:38:4 mysubmit
+    10793 Mar 16 11:36:4 mysubmit.c
+
+Which files would you like to submit ? : *
+Source: #mysubmit.c# Dest: cos101/submit/dusabimana/project1//#mysubmit.c#Source: .#mysubmit.c Dest: cos101/submit/dusabimana/project1//.#mysubmit.cSource: Makefile Dest: cos101/submit/dusabimana/project1//MakefileSource: mysubmit Dest: cos101/submit/dusabimana/project1//mysubmitSource: mysubmit.c Dest: cos101/submit/dusabimana/project1//mysubmit.c
+The files submitted for "project1" are:
+, 
+/homenfs/students/dusabimana/cos350_Proj3/cos101/submit/dusabimana/project1
+
+     SIZE DATE MODIFIED NAME
+     3512 Mar 16 11:41:5 #mysubmit.c#
+       57 Mar 16 11:41:5 Makefile
+    19027 Mar 16 11:41:5 mysubmit
+    10793 Mar 16 11:41:5 mysubmit.c
+dusabimana@honeybee:~/cos350_Proj3$ ls -lR cos101
+cos101:
+total 4
+drwxrwxr-x 3 dusabimana dusabimana 4096 Mar 16 11:41 submit
+
+cos101/submit:
+total 4
+drwxrwxr-x 3 dusabimana dusabimana 4096 Mar 16 11:41 dusabimana
+
+cos101/submit/dusabimana:
+total 4
+drwxrwxr-x 2 dusabimana dusabimana 4096 Mar 16 11:41 project1
+
+cos101/submit/dusabimana/project1:
+total 40
+-rw-rw-r-- 1 dusabimana dusabimana    57 Mar 16 11:41 Makefile
+-rw-rw-r-- 1 dusabimana dusabimana 19027 Mar 16 11:41 mysubmit
+-rw-rw-r-- 1 dusabimana dusabimana  3512 Mar 16 11:41 #mysubmit.c#
+-rw-rw-r-- 1 dusabimana dusabimana 10793 Mar 16 11:41 mysubmit.c
+dusabimana@honeybee:~/cos350_Proj3$ mkdir cos102
+dusabimana@honeybee:~/cos350_Proj3$ mkdir cos102/submit
+dusabimana@honeybee:~/cos350_Proj3$ mysubmit
+
+Enter Course Name : cos102
+
+mySubmit - user submit directory not present : cos102/submit/dusabimana
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - creating user submit directory : cos102/submit/dusabimana
+Enter the Assignment Name : project2
+
+mySubmit - assignment directory not present : cos102/submit/dusabimana/project2
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - creating assignment directory : cos102/submit/dusabimana/project2
+     SIZE DATE MODIFIED NAME
+     3512 Mar 16 10:16:5 #mysubmit.c#
+
+mySubmit - file list error : cos102/submit/dusabimana/project2
+ErrNum : 2 : [ No such file or directory ]
+       57 Mar 16 10:37:1 Makefile
+    19027 Mar 16 11:38:4 mysubmit
+    10793 Mar 16 11:36:4 mysubmit.c
+
+Which files would you like to submit ? : *
+Source: #mysubmit.c# Dest: cos102/submit/dusabimana/project2//#mysubmit.c#Source: .#mysubmit.c Dest: cos102/submit/dusabimana/project2//.#mysubmit.cSource: Makefile Dest: cos102/submit/dusabimana/project2//MakefileSource: mysubmit Dest: cos102/submit/dusabimana/project2//mysubmitSource: mysubmit.c Dest: cos102/submit/dusabimana/project2//mysubmit.c
+The files submitted for "project2" are:
+, 
+/homenfs/students/dusabimana/cos350_Proj3/cos102/submit/dusabimana/project2
+
+     SIZE DATE MODIFIED NAME
+     3512 Mar 16 11:43:4 #mysubmit.c#
+       57 Mar 16 11:43:4 Makefile
+    19027 Mar 16 11:43:4 mysubmit
+    10793 Mar 16 11:43:4 mysubmit.c
+dusabimana@honeybee:~/cos350_Proj3$ ls -lR cos102
+cos102:
+total 4
+drwxrwxr-x 3 dusabimana dusabimana 4096 Mar 16 11:43 submit
+
+cos102/submit:
+total 4
+drwxrwxr-x 3 dusabimana dusabimana 4096 Mar 16 11:43 dusabimana
+
+cos102/submit/dusabimana:
+total 4
+drwxrwxr-x 2 dusabimana dusabimana 4096 Mar 16 11:43 project2
+
+cos102/submit/dusabimana/project2:
+total 40
+-rw-rw-r-- 1 dusabimana dusabimana    57 Mar 16 11:43 Makefile
+-rw-rw-r-- 1 dusabimana dusabimana 19027 Mar 16 11:43 mysubmit
+-rw-rw-r-- 1 dusabimana dusabimana  3512 Mar 16 11:43 #mysubmit.c#
+-rw-rw-r-- 1 dusabimana dusabimana 10793 Mar 16 11:43 mysubmit.c
+dusabimana@honeybee:~/cos350_Proj3$ mysubmit
+
+Enter Course Name : cos103
+
+mySubmit - directory error : cos103
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - directory error : cos103/submit
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - user submit directory not present : cos103/submit/dusabimana
+ErrNum : 2 : [ No such file or directory ]
+
+mySubmit - creating user submit directory : cos103/submit/dusabimana
+Enter the Assignment Name : 
